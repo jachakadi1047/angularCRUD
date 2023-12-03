@@ -1,0 +1,49 @@
+<div [ngClass]="'cg-story'" [style.minHeight]="'80px'">
+  <banner
+    (productNameClick)="logEvent('productName')"
+    productName="CCH iKnow"
+    mode="research"
+  >
+    <banner-logo
+      (logoClick)="logEvent('logo')"
+      title="Go to iKnowhome page"
+      alt="Go to iKnow home page"
+      [isPreventDefault]="true"
+      *bannerLogo
+    >
+</banner-logo>
+    <banner-right *bannerRight>
+      <button-group mode="staticCollapsedOnMobile" dropdownToggleMode="gray">
+        <button-group-item *buttonGroupItem>
+          <button-field [mode]="'text'" [iconPosition]="'left'">
+            <button (click)="logEvent('help')" type="button">
+              <iconsvg name="question">
+              </iconsvg>Help
+                          </button>
+          </button-field>
+        </button-group-item>
+        <button-group-item *buttonGroupItem>
+          <button-field [mode]="'text'" [iconPosition]="'left'">
+            <button (click)="logEvent('log-in')" type="button">
+              <iconsvg name="login">
+</iconsvg>Log in
+            </button>
+          </button-field>
+        </button-group-item>
+        <dropdown-menu-item
+          (itemClick)="logEvent('Help')"
+          *buttonGroupDropdownItem
+          ><iconsvg name="question">
+          </iconsvg>Help</dropdown-menu-item
+        >
+        <dropdown-menu-item
+          (itemClick)="logEvent('log-in')"
+          *buttonGroupDropdownItem
+        >
+          <iconsvg name="login">
+</iconsvg>Log in</dropdown-menu-item
+        >
+      </button-group>
+    </banner-right>
+  </banner>
+</div>

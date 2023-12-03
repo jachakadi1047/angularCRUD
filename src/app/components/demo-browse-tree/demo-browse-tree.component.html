@@ -1,0 +1,14 @@
+<div>
+    <tree
+      [nodes]="this.tree"
+      [isLoading]="this.isLoading"
+      [checkedNodeIdsDefault]="['2', '2.1']"
+      [expandedNodeIdsDefault]="['2', '2.1']"
+      [selectedNodeIdsDefault]="['2', '2.1']"
+    >
+      <div *footerContent>Tree footer</div>
+    </tree>
+    <button-field>
+      <button (click)="reloadTree()">Show loading tree for 3s</button>
+    </button-field>
+  </div>
